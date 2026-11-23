@@ -1,0 +1,439 @@
+{
+  "appgroup_id": "6b0436668a62390062eca252",
+  "appgroup_name": "Mein Kochplaner",
+  "apps": {
+    "gerichte": {
+      "app_id": "6b0436577c18d9512b47a875",
+      "name": "Gerichte",
+      "main": false,
+      "controls": {
+        "gericht_name": {
+          "kind": "textcontrol",
+          "url": "https://my.living-apps.de/rest/v1/apps/6b0436577c18d9512b47a875/controls/gericht_name",
+          "identifier": "gericht_name",
+          "label": "Name des Gerichts",
+          "type": "string",
+          "subtype": "text",
+          "fulltype": "string/text",
+          "description": "A string value not longer than 4000 characters (or `null`/`None`).",
+          "required": true,
+          "in_list": true,
+          "in_mobile_list": true,
+          "in_text": true,
+          "in_structured_search": null,
+          "in_fulltext_search": true,
+          "in_expert_search": true,
+          "translations": null
+        },
+        "kategorie": {
+          "kind": "lookupselectcontrol",
+          "url": "https://my.living-apps.de/rest/v1/apps/6b0436577c18d9512b47a875/controls/kategorie",
+          "identifier": "kategorie",
+          "label": "Kategorie",
+          "type": "lookup",
+          "subtype": "select",
+          "fulltype": "lookup/select",
+          "description": "One selected option of multiple available options (or `null`/`None`).\n\nThe available options are defined in the `lookup_data` attribute of this control.\n\nThe field value will be the key in this `lookup_data` attribute (or `null`/`None`).\n\nDisplayed as single-select field in HTML pages.",
+          "required": false,
+          "in_list": true,
+          "in_mobile_list": true,
+          "in_text": true,
+          "in_structured_search": null,
+          "in_fulltext_search": true,
+          "in_expert_search": true,
+          "translations": null,
+          "lookup_data": {
+            "nudeln_reis": "Nudeln und Reis",
+            "suppe_eintopf": "Suppe und Eintopf",
+            "salat": "Salat",
+            "fleisch_fisch": "Fleisch und Fisch",
+            "vegetarisch": "Vegetarisch",
+            "snack": "Snack und Kleinigkeit",
+            "sonstiges": "Sonstiges"
+          },
+          "lookup_items": {
+            "nudeln_reis": {
+              "kind": "lookupitem",
+              "url": null,
+              "label": "Nudeln und Reis",
+              "translations": null
+            },
+            "suppe_eintopf": {
+              "kind": "lookupitem",
+              "url": null,
+              "label": "Suppe und Eintopf",
+              "translations": null
+            },
+            "salat": {
+              "kind": "lookupitem",
+              "url": null,
+              "label": "Salat",
+              "translations": null
+            },
+            "fleisch_fisch": {
+              "kind": "lookupitem",
+              "url": null,
+              "label": "Fleisch und Fisch",
+              "translations": null
+            },
+            "vegetarisch": {
+              "kind": "lookupitem",
+              "url": null,
+              "label": "Vegetarisch",
+              "translations": null
+            },
+            "snack": {
+              "kind": "lookupitem",
+              "url": null,
+              "label": "Snack und Kleinigkeit",
+              "translations": null
+            },
+            "sonstiges": {
+              "kind": "lookupitem",
+              "url": null,
+              "label": "Sonstiges",
+              "translations": null
+            }
+          }
+        },
+        "zubereitungszeit": {
+          "kind": "numbercontrol",
+          "url": "https://my.living-apps.de/rest/v1/apps/6b0436577c18d9512b47a875/controls/zubereitungszeit",
+          "identifier": "zubereitungszeit",
+          "label": "Zubereitungszeit (Minuten)",
+          "type": "number",
+          "subtype": null,
+          "fulltype": "number",
+          "description": "A decimal number value (or `null`/`None`).",
+          "required": true,
+          "in_list": true,
+          "in_mobile_list": false,
+          "in_text": false,
+          "in_structured_search": null,
+          "in_fulltext_search": true,
+          "in_expert_search": true,
+          "translations": null,
+          "precision": null
+        },
+        "portionen": {
+          "kind": "numbercontrol",
+          "url": "https://my.living-apps.de/rest/v1/apps/6b0436577c18d9512b47a875/controls/portionen",
+          "identifier": "portionen",
+          "label": "Portionen",
+          "type": "number",
+          "subtype": null,
+          "fulltype": "number",
+          "description": "A decimal number value (or `null`/`None`).",
+          "required": false,
+          "in_list": true,
+          "in_mobile_list": false,
+          "in_text": false,
+          "in_structured_search": null,
+          "in_fulltext_search": true,
+          "in_expert_search": true,
+          "translations": null,
+          "precision": null
+        },
+        "zutaten": {
+          "kind": "textareacontrol",
+          "url": "https://my.living-apps.de/rest/v1/apps/6b0436577c18d9512b47a875/controls/zutaten",
+          "identifier": "zutaten",
+          "label": "Zutaten (eine pro Zeile, mit Menge)",
+          "type": "string",
+          "subtype": "textarea",
+          "fulltype": "string/textarea",
+          "description": "A string value that can contain multiple lines of text (or `null`/`None`).",
+          "required": true,
+          "in_list": true,
+          "in_mobile_list": false,
+          "in_text": false,
+          "in_structured_search": null,
+          "in_fulltext_search": true,
+          "in_expert_search": true,
+          "translations": null
+        },
+        "zubereitung": {
+          "kind": "textareacontrol",
+          "url": "https://my.living-apps.de/rest/v1/apps/6b0436577c18d9512b47a875/controls/zubereitung",
+          "identifier": "zubereitung",
+          "label": "Zubereitung",
+          "type": "string",
+          "subtype": "textarea",
+          "fulltype": "string/textarea",
+          "description": "A string value that can contain multiple lines of text (or `null`/`None`).",
+          "required": false,
+          "in_list": false,
+          "in_mobile_list": false,
+          "in_text": false,
+          "in_structured_search": null,
+          "in_fulltext_search": null,
+          "in_expert_search": true,
+          "translations": null
+        }
+      }
+    },
+    "kochtagebuch": {
+      "app_id": "6b04365a6833980e2ffa47af",
+      "name": "Kochtagebuch",
+      "main": false,
+      "controls": {
+        "gericht": {
+          "kind": "applookupselectcontrol",
+          "url": "https://my.living-apps.de/rest/v1/apps/6b04365a6833980e2ffa47af/controls/gericht",
+          "identifier": "gericht",
+          "label": "Gericht",
+          "type": "applookup",
+          "subtype": "select",
+          "fulltype": "applookup/select",
+          "description": "A reference to a LivingApp record from the target lookup app 'Gerichte' with the id `6b0436577c18d9512b47a875` (or `null`/`None`).\n\nThe field value will be a valid record URL in the form `https://my.living-apps.de/rest/v1/apps/6b0436577c18d9512b47a875/records/<record-id>` (or `null`/`None`).\n\nWhen writing, either pass a record URL through exactly as this API returned it, or send the portable relative form `/apps/6b0436577c18d9512b47a875/records/<record-id>`. Other equivalent record-URL forms are accepted as well.\n\nDisplayed as single-select field in HTML pages.",
+          "required": true,
+          "in_list": true,
+          "in_mobile_list": true,
+          "in_text": true,
+          "in_structured_search": null,
+          "in_fulltext_search": true,
+          "in_expert_search": true,
+          "translations": null,
+          "lookup_app": "https://my.living-apps.de/rest/v1/apps/6b0436577c18d9512b47a875",
+          "on_delete": null
+        },
+        "gekocht_am": {
+          "kind": "datecontrol",
+          "url": "https://my.living-apps.de/rest/v1/apps/6b04365a6833980e2ffa47af/controls/gekocht_am",
+          "identifier": "gekocht_am",
+          "label": "Gekocht am",
+          "type": "date",
+          "subtype": "date",
+          "fulltype": "date/date",
+          "description": "A calendar date consisting of year, month and day (or `null`/`None`)\n\nThe field value will be a string in the format `<YYYY>-<MM>-<DD>` (or `null`/`None`).\n\nFor example: `2000-02-29`.\n\nFor `POST`/`PUT`/`PATCH` requests the REST API uses a liberal parsing approach so that strings like `2026`, `February 29, 2000 12:34 MEST`, `letztes Jahr` etc. will be accepted as value date values. However this runs the risk of parsing ambiguous values incorrectly. To ensure reliable parsing it is best to use the canonical format specified above.",
+          "required": true,
+          "in_list": true,
+          "in_mobile_list": true,
+          "in_text": true,
+          "in_structured_search": null,
+          "in_fulltext_search": true,
+          "in_expert_search": true,
+          "translations": null
+        },
+        "geklappt": {
+          "kind": "boolcontrol",
+          "url": "https://my.living-apps.de/rest/v1/apps/6b04365a6833980e2ffa47af/controls/geklappt",
+          "identifier": "geklappt",
+          "label": "Hat gut geklappt",
+          "type": "bool",
+          "subtype": null,
+          "fulltype": "bool",
+          "description": "A boolean value, i.e. `true` or `false` (or `null`/`None`).",
+          "required": false,
+          "in_list": true,
+          "in_mobile_list": false,
+          "in_text": false,
+          "in_structured_search": null,
+          "in_fulltext_search": true,
+          "in_expert_search": true,
+          "translations": null
+        },
+        "bewertung": {
+          "kind": "lookupradiocontrol",
+          "url": "https://my.living-apps.de/rest/v1/apps/6b04365a6833980e2ffa47af/controls/bewertung",
+          "identifier": "bewertung",
+          "label": "Bewertung",
+          "type": "lookup",
+          "subtype": "radio",
+          "fulltype": "lookup/radio",
+          "description": "One selected option of multiple available options (or `null`/`None`).\n\nThe available options are defined in the `lookup_data` attribute of this control.\n\nThe field value will be the key in this `lookup_data` attribute (or `null`/`None`).\n\nDisplayed as radio button fields in HTML pages.",
+          "required": false,
+          "in_list": true,
+          "in_mobile_list": false,
+          "in_text": false,
+          "in_structured_search": null,
+          "in_fulltext_search": true,
+          "in_expert_search": true,
+          "translations": null,
+          "lookup_data": {
+            "bewertung_1": "Schlecht",
+            "bewertung_2": "Geht so",
+            "bewertung_3": "Gut",
+            "bewertung_4": "Sehr gut",
+            "bewertung_5": "Ausgezeichnet"
+          },
+          "lookup_items": {
+            "bewertung_1": {
+              "kind": "lookupitem",
+              "url": null,
+              "label": "Schlecht",
+              "translations": null
+            },
+            "bewertung_2": {
+              "kind": "lookupitem",
+              "url": null,
+              "label": "Geht so",
+              "translations": null
+            },
+            "bewertung_3": {
+              "kind": "lookupitem",
+              "url": null,
+              "label": "Gut",
+              "translations": null
+            },
+            "bewertung_4": {
+              "kind": "lookupitem",
+              "url": null,
+              "label": "Sehr gut",
+              "translations": null
+            },
+            "bewertung_5": {
+              "kind": "lookupitem",
+              "url": null,
+              "label": "Ausgezeichnet",
+              "translations": null
+            }
+          }
+        },
+        "tatsaechliche_dauer": {
+          "kind": "numbercontrol",
+          "url": "https://my.living-apps.de/rest/v1/apps/6b04365a6833980e2ffa47af/controls/tatsaechliche_dauer",
+          "identifier": "tatsaechliche_dauer",
+          "label": "Tatsächliche Dauer (Minuten)",
+          "type": "number",
+          "subtype": null,
+          "fulltype": "number",
+          "description": "A decimal number value (or `null`/`None`).",
+          "required": false,
+          "in_list": true,
+          "in_mobile_list": false,
+          "in_text": false,
+          "in_structured_search": null,
+          "in_fulltext_search": true,
+          "in_expert_search": true,
+          "translations": null,
+          "precision": null
+        },
+        "anmerkungen": {
+          "kind": "textareacontrol",
+          "url": "https://my.living-apps.de/rest/v1/apps/6b04365a6833980e2ffa47af/controls/anmerkungen",
+          "identifier": "anmerkungen",
+          "label": "Anmerkungen fürs nächste Mal",
+          "type": "string",
+          "subtype": "textarea",
+          "fulltype": "string/textarea",
+          "description": "A string value that can contain multiple lines of text (or `null`/`None`).",
+          "required": false,
+          "in_list": false,
+          "in_mobile_list": false,
+          "in_text": false,
+          "in_structured_search": null,
+          "in_fulltext_search": null,
+          "in_expert_search": true,
+          "translations": null
+        }
+      }
+    },
+    "einkaufsplanung": {
+      "app_id": "6b04365bc90a38021b1c458c",
+      "name": "Einkaufsplanung",
+      "main": false,
+      "controls": {
+        "bezeichnung": {
+          "kind": "textcontrol",
+          "url": "https://my.living-apps.de/rest/v1/apps/6b04365bc90a38021b1c458c/controls/bezeichnung",
+          "identifier": "bezeichnung",
+          "label": "Bezeichnung",
+          "type": "string",
+          "subtype": "text",
+          "fulltype": "string/text",
+          "description": "A string value not longer than 4000 characters (or `null`/`None`).",
+          "required": true,
+          "in_list": true,
+          "in_mobile_list": true,
+          "in_text": true,
+          "in_structured_search": null,
+          "in_fulltext_search": true,
+          "in_expert_search": true,
+          "translations": null
+        },
+        "einkaufsdatum": {
+          "kind": "datecontrol",
+          "url": "https://my.living-apps.de/rest/v1/apps/6b04365bc90a38021b1c458c/controls/einkaufsdatum",
+          "identifier": "einkaufsdatum",
+          "label": "Einkaufsdatum",
+          "type": "date",
+          "subtype": "date",
+          "fulltype": "date/date",
+          "description": "A calendar date consisting of year, month and day (or `null`/`None`)\n\nThe field value will be a string in the format `<YYYY>-<MM>-<DD>` (or `null`/`None`).\n\nFor example: `2000-02-29`.\n\nFor `POST`/`PUT`/`PATCH` requests the REST API uses a liberal parsing approach so that strings like `2026`, `February 29, 2000 12:34 MEST`, `letztes Jahr` etc. will be accepted as value date values. However this runs the risk of parsing ambiguous values incorrectly. To ensure reliable parsing it is best to use the canonical format specified above.",
+          "required": false,
+          "in_list": true,
+          "in_mobile_list": true,
+          "in_text": true,
+          "in_structured_search": null,
+          "in_fulltext_search": true,
+          "in_expert_search": true,
+          "translations": null
+        },
+        "gerichte": {
+          "kind": "multipleapplookupselectcontrol",
+          "url": "https://my.living-apps.de/rest/v1/apps/6b04365bc90a38021b1c458c/controls/gerichte",
+          "identifier": "gerichte",
+          "label": "Ausgewählte Gerichte",
+          "type": "multipleapplookup",
+          "subtype": "select",
+          "fulltype": "multipleapplookup/select",
+          "description": "Arbitrary number of referenced LivingApp records from the target lookup app 'Gerichte' with the id `6b0436577c18d9512b47a875`.\n\nThe field value will be a list of valid record URLs in the form `https://my.living-apps.de/rest/v1/apps/6b0436577c18d9512b47a875/records/<record-id>`.\n\nWhen writing, either pass record URLs through exactly as this API returned them, or send the portable relative form `/apps/6b0436577c18d9512b47a875/records/<record-id>`. Other equivalent record-URL forms are accepted as well.\n\nDisplayed as a multi-select field in HTML pages.",
+          "required": true,
+          "in_list": true,
+          "in_mobile_list": false,
+          "in_text": false,
+          "in_structured_search": null,
+          "in_fulltext_search": true,
+          "in_expert_search": true,
+          "translations": null,
+          "lookup_app": "https://my.living-apps.de/rest/v1/apps/6b0436577c18d9512b47a875",
+          "on_delete": null
+        },
+        "zusaetzliche_artikel": {
+          "kind": "textareacontrol",
+          "url": "https://my.living-apps.de/rest/v1/apps/6b04365bc90a38021b1c458c/controls/zusaetzliche_artikel",
+          "identifier": "zusaetzliche_artikel",
+          "label": "Zusätzliche Artikel",
+          "type": "string",
+          "subtype": "textarea",
+          "fulltype": "string/textarea",
+          "description": "A string value that can contain multiple lines of text (or `null`/`None`).",
+          "required": false,
+          "in_list": true,
+          "in_mobile_list": false,
+          "in_text": false,
+          "in_structured_search": null,
+          "in_fulltext_search": true,
+          "in_expert_search": true,
+          "translations": null
+        },
+        "erledigt": {
+          "kind": "boolcontrol",
+          "url": "https://my.living-apps.de/rest/v1/apps/6b04365bc90a38021b1c458c/controls/erledigt",
+          "identifier": "erledigt",
+          "label": "Einkauf erledigt",
+          "type": "bool",
+          "subtype": null,
+          "fulltype": "bool",
+          "description": "A boolean value, i.e. `true` or `false` (or `null`/`None`).",
+          "required": false,
+          "in_list": true,
+          "in_mobile_list": false,
+          "in_text": false,
+          "in_structured_search": null,
+          "in_fulltext_search": true,
+          "in_expert_search": true,
+          "translations": null
+        }
+      }
+    }
+  },
+  "metadata": {
+    "apps_list": [
+      "Gerichte",
+      "Kochtagebuch",
+      "Einkaufsplanung"
+    ]
+  }
+}

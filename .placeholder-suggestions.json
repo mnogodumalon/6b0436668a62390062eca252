@@ -1,0 +1,22 @@
+{
+  "GerichteDialog.tsx": {
+    "gericht_name": "z. B. Spaghetti Bolognese",
+    "kategorie": "z. B. Salat, Suppe",
+    "zubereitungszeit": "z. B. 30",
+    "portionen": "z. B. 4",
+    "zutaten": "Eine Zutat pro Zeile, mit Menge",
+    "zubereitung": "Wie wird es zubereitet?"
+  },
+  "KochtagebuchDialog.tsx": {
+    "gericht": "Welches Gericht?",
+    "gekocht_am": "Wann hast du gekocht?",
+    "tatsaechliche_dauer": "z. B. 45",
+    "anmerkungen": "Was machst du nächstes Mal anders?"
+  },
+  "EinkaufsplanungDialog.tsx": {
+    "bezeichnung": "z. B. Wocheneinkauf KW 12",
+    "einkaufsdatum": "Wann wird eingekauft?",
+    "gerichte": "Welche Gerichte?",
+    "zusaetzliche_artikel": "Ein Artikel pro Zeile"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "pages": {
+    "en": {
+      "Alle": "All",
+      "Einkauf erledigt": "Shopping done",
+      "Einkauf planen": "Plan shopping",
+      "Erstes Gericht anlegen": "Add first dish",
+      "Gericht anlegen": "Add dish",
+      "Kein Einkauf offen.": "No shopping open.",
+      "Kein Gericht in dieser Zeit — das kürzeste braucht {0} Min.": "No dish in this time — the shortest takes {0} min.",
+      "Lege deine ersten Gerichte an und finde abends schneller etwas.": "Add your first dishes and find something faster in the evening.",
+      "Neues Gericht": "New dish",
+      "Noch keine Gerichte vorhanden.": "No dishes yet.",
+      "Noch keine Gerichte — leg dein erstes Gericht mit Zutaten und Zubereitungszeit an.": "No dishes yet — add your first dish with ingredients and preparation time.",
+      "Noch nichts im Kochtagebuch.": "Nothing in the cooking journal yet.",
+      "Nur zusätzliche Artikel": "Additional items only",
+      "Offene Einkaufsplanungen": "Open shopping plans",
+      "Offene Einkäufe": "Open shopping lists",
+      "Ohne Bewertung": "No rating",
+      "Ohne Datum": "No date",
+      "Ohne Kategorie": "No category",
+      "Portionen": "Servings",
+      "Schnell (bis 30 Min.)": "Quick (up to 30 min.)",
+      "Schnell geht heute: {0}.": "Quick today: {0}.",
+      "Was koche ich heute?": "What should I cook today?",
+      "Wie viel Zeit hast du? Die kürzesten Gerichte stehen oben.": "How much time do you have? The shortest dishes are at the top.",
+      "Zuletzt gab es {0} — {1}": "Last time we had {0} — {1}",
+      "Zuletzt gekocht": "Last cooked",
+      "bis {0} Min.": "up to {0} min.",
+      "{0} — erledigt": "{0} — done",
+      "{0} — wieder offen": "{0} — reopened",
+      "✓ Erledigt": "✓ Done"
+    }
+  },
+  "v": 1
+}
