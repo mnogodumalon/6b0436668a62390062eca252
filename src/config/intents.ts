@@ -20,6 +20,7 @@
 import type { ComponentType } from 'react';
 
 // <custom:intent-imports>
+import { IconShoppingCart, IconChefHat } from '@tabler/icons-react';
 // </custom:intent-imports>
 
 export interface IntentLink {
@@ -42,6 +43,8 @@ export interface IntentLink {
 
 export const INTENTS: IntentLink[] = [
   // <custom:intents>
+  { path: '/intents/einkauf-planen', label: { de: 'Einkauf planen', en: 'Plan shopping trip' }, icon: IconShoppingCart, description: 'Mehrere Gerichte für den Einkauf auswählen, optional zusätzliche Artikel ergänzen und daraus die Einkaufsliste bekommen.' },
+  { path: '/intents/gekocht-festhalten', label: { de: 'Gekocht festhalten', en: 'Log a cooked dish' }, icon: IconChefHat, description: 'Nach dem Kochen ein Gericht wählen und festhalten, wie es geklappt hat, mit Bewertung, Dauer und Anmerkungen fürs nächste Mal.' },
   // </custom:intents>
 ];
 
@@ -52,7 +55,7 @@ export const INTENTS: IntentLink[] = [
  * purpose — a scaffold update resets it to false (self-healing if Phase 2
  * never ran).
  */
-export const INTENTS_PENDING = true;
+export const INTENTS_PENDING = false;
 
 /**
  * When the Phase-1 bundle was deployed (ISO, set by the service together with
