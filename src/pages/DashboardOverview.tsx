@@ -63,7 +63,9 @@ export default function DashboardOverview({ data }: { data: DashboardData }) {
 
   const last = zuletzt[0];
   const context = last
-    ? tx`Zuletzt gab es ${last.gerichtName} — ${offen.length > 0 ? 'ein Einkauf wartet noch.' : 'der Einkauf ist erledigt.'}`
+    ? offen.length > 0
+      ? tx`Zuletzt gab es ${last.gerichtName} — ein Einkauf wartet noch.`
+      : tx`Zuletzt gab es ${last.gerichtName} — der Einkauf ist erledigt.`
     : quick.length > 0
       ? tx`Schnell geht heute: ${namen(quick.slice(0, 2).map(g => g.fields.gericht_name ?? ''))}.`
       : tx`Lege deine ersten Gerichte an und finde abends schneller etwas.`;

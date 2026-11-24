@@ -487,6 +487,51 @@ if (gridIdx >= 0) {
   }
 }
 
+// 25c. A link to a flow names a flow that exists. 23.11.2026 (Essensplaner): the
+// plan had no flow for a look-up task, the overview agent guessed
+// '#/intents/was-esse-ich-jetzt' and the largest tile led to „Diese Seite gibt
+// es nicht“ — check-intents 8 reads only the flow pages. Known = the plan's
+// flows (their routes are wired after this page is written) plus every flow
+// already routed (a page job's flow the plan file here does not know yet).
+// No plan: nothing is known at this point, nothing is judged.
+{
+  const PLAN_FLOWS = ["einkauf-planen", "gekocht-festhalten"];
+  if (PLAN_FLOWS !== null) {
+    const known = new Set(PLAN_FLOWS);
+    for (const f of ['src/App.tsx', 'src/config/intents.ts']) {
+      if (!existsSync(f)) continue;
+      for (const m of readFileSync(f, 'utf8').matchAll(/['"`]\/?intents\/([a-z0-9-]+)['"`]/g)) known.add(m[1]);
+    }
+    const walk = (dir) => {
+      let out = [];
+      if (!existsSync(dir)) return out;
+      for (const n of readdirSync(dir, { withFileTypes: true })) {
+        const full = join(dir, n.name);
+        if (n.isDirectory()) { if (!['intents', 'public', 'ui'].includes(n.name)) out = out.concat(walk(full)); }
+        else if (/\.tsx?$/.test(n.name) && !n.name.endsWith('.example.tsx')) out.push(full);
+      }
+      return out;
+    };
+    const files = [...new Set([FILE, ...walk('src/pages'), ...walk('src/components/custom'), ...walk('src/components/overview')])]
+      .filter(f => f === FILE || existsSync(f));
+    const dead = [];
+    for (const file of files) {
+      const raw = file === FILE ? src : readFileSync(file, 'utf8');
+      const text = file === FILE ? code : stripCommentsKeepLayout(raw);
+      const rawLines = raw.split('\n');
+      for (const m of text.matchAll(/#\/intents\/([a-z0-9-]+)/g)) {
+        if (known.has(m[1])) continue;
+        const line = text.slice(0, m.index).split('\n').length;
+        dead.push(`${file === FILE ? '' : file + ' '}line ${line}: ${(rawLines[line - 1] || '').trim()}`);
+      }
+    }
+    if (dead.length) {
+      const list = [...known].map(s => `'#/intents/${s}'`).join(', ') || 'none';
+      errors.push(`A link to a flow that does not exist — it leads to „Diese Seite gibt es nicht“. The flows of this application are: ${list}. Link only to these; a task without a flow is built INTO this page (choices as filters, the matching records as a list, a click opens the record):\n  ` + dead.join('\n  '));
+    }
+  }
+}
+
 // 26. The overview writes only what the plan lets it write itself
 // (plan.dashboard.writes — a drag that moves a stay, a button that flips a
 // flag). Audit 23.10.2026: the overview moved bookings and set „An Besitzer

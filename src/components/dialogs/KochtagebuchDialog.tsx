@@ -356,7 +356,7 @@ export function KochtagebuchDialog({ open, onClose, onSubmit, defaultValues, rec
         <Label htmlFor="gericht">{labelFor('gericht')} <span className="text-destructive" aria-hidden="true">*</span></Label>
         <Combobox
           id="gericht"
-          placeholder="Welches Gericht?"
+          placeholder=""
           items={gerichteListAll.map(r => ({
             id: r.record_id,
             label: displayNameOf('gerichte', r.fields as Record<string, unknown>) || r.record_id,
@@ -376,7 +376,7 @@ export function KochtagebuchDialog({ open, onClose, onSubmit, defaultValues, rec
         <Label htmlFor="gekocht_am">{labelFor('gekocht_am')} <span className="text-destructive" aria-hidden="true">*</span></Label>
         <DatePicker
           id="gekocht_am"
-          placeholder="Wann hast du gekocht?"
+          placeholder=""
           mode="date"
           value={fields.gekocht_am ?? null}
           onChange={v => setFields(f => ({ ...f, gekocht_am: v ?? undefined }))}
@@ -481,7 +481,7 @@ export function KochtagebuchDialog({ open, onClose, onSubmit, defaultValues, rec
           inputMode="decimal"
           step="any"
           {...numberInputProps(formEnhancements, 'tatsaechliche_dauer')}
-          placeholder="z. B. 45"
+          placeholder=""
           value={fields.tatsaechliche_dauer !== undefined ? fields.tatsaechliche_dauer : (computedValues['tatsaechliche_dauer'] ?? '')}
           onChange={e => setFields(f => ({ ...f, tatsaechliche_dauer: clampNumberValue(formEnhancements, 'tatsaechliche_dauer', e.target.value) }))}
         />
@@ -492,7 +492,7 @@ export function KochtagebuchDialog({ open, onClose, onSubmit, defaultValues, rec
         <Label htmlFor="anmerkungen">{labelFor('anmerkungen')}</Label>
         <Textarea
           id="anmerkungen"
-          placeholder="Was machst du nächstes Mal anders?"
+          placeholder=""
           value={fields.anmerkungen ?? ''}
           onChange={e => setFields(f => ({ ...f, anmerkungen: e.target.value }))}
           rows={3}

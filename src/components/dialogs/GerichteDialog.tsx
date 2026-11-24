@@ -320,7 +320,7 @@ export function GerichteDialog({ open, onClose, onSubmit, defaultValues, recordI
         <Label htmlFor="gericht_name">{labelFor('gericht_name')} <span className="text-destructive" aria-hidden="true">*</span></Label>
         <Input
           id="gericht_name"
-          placeholder="z. B. Spaghetti Bolognese"
+          placeholder=""
           value={fields.gericht_name ?? ''}
           onChange={e => setFields(f => ({ ...f, gericht_name: e.target.value }))}
           required
@@ -337,7 +337,7 @@ export function GerichteDialog({ open, onClose, onSubmit, defaultValues, recordI
           value={lookupKey(fields.kategorie) ?? ''}
           onValueChange={v => setFields(f => ({ ...f, kategorie: v === 'none' ? undefined : v as any }))}
         >
-          <SelectTrigger id="kategorie" className="max-sm:h-11"><SelectValue placeholder="z. B. Salat, Suppe" /></SelectTrigger>
+          <SelectTrigger id="kategorie" className="max-sm:h-11"><SelectValue placeholder="" /></SelectTrigger>
           <SelectContent>
             <SelectItem value="none">—</SelectItem>
             <SelectItem value="nudeln_reis">{lookupLabel('gerichte', 'kategorie', 'nudeln_reis') ?? 'Nudeln und Reis'}</SelectItem>
@@ -360,7 +360,7 @@ export function GerichteDialog({ open, onClose, onSubmit, defaultValues, recordI
           inputMode="decimal"
           step="any"
           {...numberInputProps(formEnhancements, 'zubereitungszeit')}
-          placeholder="z. B. 30"
+          placeholder=""
           value={fields.zubereitungszeit !== undefined ? fields.zubereitungszeit : (computedValues['zubereitungszeit'] ?? '')}
           onChange={e => setFields(f => ({ ...f, zubereitungszeit: clampNumberValue(formEnhancements, 'zubereitungszeit', e.target.value) }))}
         />
@@ -378,7 +378,7 @@ export function GerichteDialog({ open, onClose, onSubmit, defaultValues, recordI
           inputMode="decimal"
           step="any"
           {...numberInputProps(formEnhancements, 'portionen')}
-          placeholder="z. B. 4"
+          placeholder=""
           value={fields.portionen !== undefined ? fields.portionen : (computedValues['portionen'] ?? '')}
           onChange={e => setFields(f => ({ ...f, portionen: clampNumberValue(formEnhancements, 'portionen', e.target.value) }))}
         />
@@ -389,7 +389,7 @@ export function GerichteDialog({ open, onClose, onSubmit, defaultValues, recordI
         <Label htmlFor="zutaten">{labelFor('zutaten')} <span className="text-destructive" aria-hidden="true">*</span></Label>
         <Textarea
           id="zutaten"
-          placeholder="Eine Zutat pro Zeile, mit Menge"
+          placeholder=""
           value={fields.zutaten ?? ''}
           onChange={e => setFields(f => ({ ...f, zutaten: e.target.value }))}
           rows={3}
@@ -404,7 +404,7 @@ export function GerichteDialog({ open, onClose, onSubmit, defaultValues, recordI
         <Label htmlFor="zubereitung">{labelFor('zubereitung')}</Label>
         <Textarea
           id="zubereitung"
-          placeholder="Wie wird es zubereitet?"
+          placeholder=""
           value={fields.zubereitung ?? ''}
           onChange={e => setFields(f => ({ ...f, zubereitung: e.target.value }))}
           rows={3}

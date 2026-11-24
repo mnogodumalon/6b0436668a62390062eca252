@@ -1878,7 +1878,7 @@ export const LABELS: Record<CoreLocale, LabelBundle> = {
         }
       },
       "einkaufsplanung": {
-        "name": "Shopping Planner",
+        "name": "Shopping Planning",
         "app_id": "6b04365bc90a38021b1c458c",
         "fields": {
           "bezeichnung": "Description",

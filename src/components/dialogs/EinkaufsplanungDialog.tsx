@@ -348,7 +348,7 @@ export function EinkaufsplanungDialog({ open, onClose, onSubmit, defaultValues, 
         <Label htmlFor="bezeichnung">{labelFor('bezeichnung')} <span className="text-destructive" aria-hidden="true">*</span></Label>
         <Input
           id="bezeichnung"
-          placeholder="z. B. Wocheneinkauf KW 12"
+          placeholder=""
           value={fields.bezeichnung ?? ''}
           onChange={e => setFields(f => ({ ...f, bezeichnung: e.target.value }))}
           required
@@ -363,7 +363,7 @@ export function EinkaufsplanungDialog({ open, onClose, onSubmit, defaultValues, 
         <Label htmlFor="einkaufsdatum">{labelFor('einkaufsdatum')}</Label>
         <DatePicker
           id="einkaufsdatum"
-          placeholder="Wann wird eingekauft?"
+          placeholder=""
           mode="date"
           value={fields.einkaufsdatum ?? null}
           onChange={v => setFields(f => ({ ...f, einkaufsdatum: v ?? undefined }))}
@@ -375,7 +375,7 @@ export function EinkaufsplanungDialog({ open, onClose, onSubmit, defaultValues, 
         <Label htmlFor="gerichte">{labelFor('gerichte')} <span className="text-destructive" aria-hidden="true">*</span></Label>
         <MultiCombobox
           id="gerichte"
-          placeholder="Welche Gerichte?"
+          placeholder=""
           items={gerichteListAll.map(r => ({
             id: r.record_id,
             label: displayNameOf('gerichte', r.fields as Record<string, unknown>) || r.record_id,
@@ -395,7 +395,7 @@ export function EinkaufsplanungDialog({ open, onClose, onSubmit, defaultValues, 
         <Label htmlFor="zusaetzliche_artikel">{labelFor('zusaetzliche_artikel')}</Label>
         <Textarea
           id="zusaetzliche_artikel"
-          placeholder="Ein Artikel pro Zeile"
+          placeholder=""
           value={fields.zusaetzliche_artikel ?? ''}
           onChange={e => setFields(f => ({ ...f, zusaetzliche_artikel: e.target.value }))}
           rows={3}

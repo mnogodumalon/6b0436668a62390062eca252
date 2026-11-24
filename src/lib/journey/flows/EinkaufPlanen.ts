@@ -1,7 +1,7 @@
 /**
  * useEinkaufPlanenFlow — the plumbing of the flow « Einkauf planen », generated from the plan.
  *
- * Writes `einkaufsplanung`: asks `bezeichnung`, `einkaufsdatum`, `gerichte`, `zusaetzliche_artikel`; sets `erledigt` itself.
+ * Writes `einkaufsplanung`: asks `gerichte`, `bezeichnung`, `einkaufsdatum`, `zusaetzliche_artikel`; sets `erledigt` itself.
  * The hook OWNS: the form(s) with exactly these fields and the plan's required
  * ingredients, one record search per picked field (columns and filter from
  * the plan), and the submit plan with its fixed and derived values. A page
@@ -109,10 +109,10 @@ export function useEinkaufPlanenFlow(options: EinkaufPlanenFlowOptions = {}) {
   const steps = { ...DEFAULT_STEPS, ...(options.steps ?? {}) } as Record<string, number>;
   const variantRef = useRef<string | null>(null);   // the end action the person chose (PV-14)
   const einkaufsplanung = useStepForm('einkaufsplanung', {
-    fields: ["bezeichnung", "einkaufsdatum", "gerichte", "zusaetzliche_artikel"],
-    steps: only(steps, ["bezeichnung", "einkaufsdatum", "gerichte", "zusaetzliche_artikel"]) as Record<string, number>,
-    initial: only(options.initial as FormValues | undefined, ["bezeichnung", "einkaufsdatum", "gerichte", "zusaetzliche_artikel"]),
-    messages: only(options.messages as Record<string, string> | undefined, ["bezeichnung", "einkaufsdatum", "gerichte", "zusaetzliche_artikel"]),
+    fields: ["gerichte", "bezeichnung", "einkaufsdatum", "zusaetzliche_artikel"],
+    steps: only(steps, ["gerichte", "bezeichnung", "einkaufsdatum", "zusaetzliche_artikel"]) as Record<string, number>,
+    initial: only(options.initial as FormValues | undefined, ["gerichte", "bezeichnung", "einkaufsdatum", "zusaetzliche_artikel"]),
+    messages: only(options.messages as Record<string, string> | undefined, ["gerichte", "bezeichnung", "einkaufsdatum", "zusaetzliche_artikel"]),
   });
   const forms: EinkaufPlanenForms = { einkaufsplanung };
   // the editor of a list is not a record of its own: the review and the success

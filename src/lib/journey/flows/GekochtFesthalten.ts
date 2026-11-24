@@ -1,7 +1,7 @@
 /**
  * useGekochtFesthaltenFlow — the plumbing of the flow « Gekocht festhalten », generated from the plan.
  *
- * Writes `kochtagebuch`: asks `gericht`, `geklappt`, `bewertung`, `tatsaechliche_dauer`, `anmerkungen`; sets `gekocht_am` itself.
+ * Writes `kochtagebuch`: asks `gericht`, `geklappt`, `bewertung`, `anmerkungen`, `tatsaechliche_dauer`; sets `gekocht_am` itself.
  * The hook OWNS: the form(s) with exactly these fields and the plan's required
  * ingredients, one record search per picked field (columns and filter from
  * the plan), and the submit plan with its fixed and derived values. A page
@@ -16,15 +16,15 @@
  *   messages  the sentence for an empty required field, per field
  *
  *   const flow = useGekochtFesthaltenFlow({
- *     steps: { gericht: 1, geklappt: 2, bewertung: 2, tatsaechliche_dauer: 2, anmerkungen: 2 },
+ *     steps: { gericht: 1, geklappt: 2, bewertung: 2, anmerkungen: 2, tatsaechliche_dauer: 2 },
  *     items: { gericht: r => ({ id: r.id, title: fieldText(r, 'gericht_name') }) },
  *   });
  *   <IntentWizardShell forms={flow.forms} draftKey={flow.draftKey} …>
  *     <EntitySelectStep {...flow.picks.gericht.select} {...flow.pick('gericht')} />
  *     <Bound form={flow.forms.kochtagebuch} name="geklappt" />
  *     <Bound form={flow.forms.kochtagebuch} name="bewertung" />
- *     <Bound form={flow.forms.kochtagebuch} name="tatsaechliche_dauer" />
  *     <Bound form={flow.forms.kochtagebuch} name="anmerkungen" />
+ *     <Bound form={flow.forms.kochtagebuch} name="tatsaechliche_dauer" />
  *     <StepNav onNext={() => flow.validateStep(n)} />
  *     {!flow.submit.done && <SummaryStep forms={flow.formList} submit={flow.submit} />}
  *     {flow.submit.result && <SuccessStep result={flow.submit.result} forms={flow.formList} submit={flow.submit} />}
@@ -101,10 +101,10 @@ function hasValues(form: StepForm): boolean {
 export function useGekochtFesthaltenFlow(options: GekochtFesthaltenFlowOptions = {}) {
   const steps = { ...DEFAULT_STEPS, ...(options.steps ?? {}) } as Record<string, number>;
   const kochtagebuch = useStepForm('kochtagebuch', {
-    fields: ["gericht", "geklappt", "bewertung", "tatsaechliche_dauer", "anmerkungen"],
-    steps: only(steps, ["gericht", "geklappt", "bewertung", "tatsaechliche_dauer", "anmerkungen"]) as Record<string, number>,
-    initial: only(options.initial as FormValues | undefined, ["gericht", "geklappt", "bewertung", "tatsaechliche_dauer", "anmerkungen"]),
-    messages: only(options.messages as Record<string, string> | undefined, ["gericht", "geklappt", "bewertung", "tatsaechliche_dauer", "anmerkungen"]),
+    fields: ["gericht", "geklappt", "bewertung", "anmerkungen", "tatsaechliche_dauer"],
+    steps: only(steps, ["gericht", "geklappt", "bewertung", "anmerkungen", "tatsaechliche_dauer"]) as Record<string, number>,
+    initial: only(options.initial as FormValues | undefined, ["gericht", "geklappt", "bewertung", "anmerkungen", "tatsaechliche_dauer"]),
+    messages: only(options.messages as Record<string, string> | undefined, ["gericht", "geklappt", "bewertung", "anmerkungen", "tatsaechliche_dauer"]),
   });
   const forms: GekochtFesthaltenForms = { kochtagebuch };
   // the editor of a list is not a record of its own: the review and the success
@@ -173,8 +173,8 @@ export function useGekochtFesthaltenFlow(options: GekochtFesthaltenFlowOptions =
     };
     { const v = linkedParams.get('geklappt'); if (v !== null && isEmptyValue(kochtagebuch.get('geklappt'))) (kochtagebuch.set as (k: string, v: unknown) => void)('geklappt', coerce(kochtagebuch, 'geklappt', v)); }
     { const v = linkedParams.get('bewertung'); if (v !== null && isEmptyValue(kochtagebuch.get('bewertung'))) (kochtagebuch.set as (k: string, v: unknown) => void)('bewertung', coerce(kochtagebuch, 'bewertung', v)); }
-    { const v = linkedParams.get('tatsaechliche_dauer'); if (v !== null && isEmptyValue(kochtagebuch.get('tatsaechliche_dauer'))) (kochtagebuch.set as (k: string, v: unknown) => void)('tatsaechliche_dauer', coerce(kochtagebuch, 'tatsaechliche_dauer', v)); }
     { const v = linkedParams.get('anmerkungen'); if (v !== null && isEmptyValue(kochtagebuch.get('anmerkungen'))) (kochtagebuch.set as (k: string, v: unknown) => void)('anmerkungen', coerce(kochtagebuch, 'anmerkungen', v)); }
+    { const v = linkedParams.get('tatsaechliche_dauer'); if (v !== null && isEmptyValue(kochtagebuch.get('tatsaechliche_dauer'))) (kochtagebuch.set as (k: string, v: unknown) => void)('tatsaechliche_dauer', coerce(kochtagebuch, 'tatsaechliche_dauer', v)); }
     {
       const cur = forms.kochtagebuch.get('gericht');
       const fromLink = linkedParams.get('gericht');

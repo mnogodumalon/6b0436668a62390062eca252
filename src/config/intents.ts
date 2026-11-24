@@ -43,8 +43,8 @@ export interface IntentLink {
 
 export const INTENTS: IntentLink[] = [
   // <custom:intents>
-  { path: '/intents/einkauf-planen', label: { de: 'Einkauf planen', en: 'Plan shopping trip' }, icon: IconShoppingCart, description: 'Mehrere Gerichte für den Einkauf auswählen, optional zusätzliche Artikel ergänzen und daraus die Einkaufsliste bekommen.' },
-  { path: '/intents/gekocht-festhalten', label: { de: 'Gekocht festhalten', en: 'Log a cooked dish' }, icon: IconChefHat, description: 'Nach dem Kochen ein Gericht wählen und festhalten, wie es geklappt hat, mit Bewertung, Dauer und Anmerkungen fürs nächste Mal.' },
+  { path: '/intents/einkauf-planen', label: { de: 'Einkauf planen', en: 'Plan shopping trip' }, icon: IconShoppingCart, description: { de: 'Mehrere Gerichte für den Einkauf auswählen, optional zusätzliche Artikel ergänzen und daraus die Einkaufsliste bekommen.', en: 'Select several dishes for shopping, optionally add extra items, and get your shopping list from them.' } },
+  { path: '/intents/gekocht-festhalten', label: { de: 'Gekocht festhalten', en: 'Log a cooked dish' }, icon: IconChefHat, description: { de: 'Nach dem Kochen ein Gericht wählen und festhalten, wie es geklappt hat, mit Bewertung, Dauer und Anmerkungen fürs nächste Mal.', en: 'After cooking, select a dish and record how it turned out, with rating, duration, and notes for next time.' } },
   // </custom:intents>
 ];
 
@@ -64,5 +64,5 @@ export const INTENTS_PENDING = false;
  * pulsing "werden erstellt …" in every deployed Phase-1 bundle forever — no
  * code path redeploys Phase 1 without the flag (live 03.09.2026).
  */
-export const INTENTS_PENDING_SINCE: string | null = '2026-11-23T12:51:16+00:00';
+export const INTENTS_PENDING_SINCE: string | null = null;
 export const PENDING_MAX_MINUTES = 30;
